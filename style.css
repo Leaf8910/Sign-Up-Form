@@ -1,20 +1,25 @@
+@font-face {
+	font-family: 'Norse-Bold';
+	src: url('font/Norse-Bold.otf'); 
+	src: 
+		local('Norse Bold Font'),
+		local('Norse-Bold'),
+		url('font/Norse-Bold.otf') 
+		format('OpenType');
+	font-weight: bold;
+}
+
 *{
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
-    font-family:'Times New Roman', Times, serif
+    font-family:'Poppins', serif
 }
 
 .content{
     width: 100vw;
     height: 100vh;
 }
-
-.body {
-    display: flex;
-    align-items: center;
-}
-
 
 
 /* left */
@@ -23,8 +28,11 @@
     background-position: center;
     background-size: auto;
     background-repeat: no-repeat;
-    width: 40vh;
-    /* height: 100vh; */
+    width: 40vw;
+}
+
+.left {
+    padding-left: 3vw;
 }
 
 .odin, 
@@ -38,11 +46,12 @@
 }
 
 .odin-text {
-    font: 'Norse-Bold', 'Sans-serif';
+    font: 'Norse-Bold', 'Poppins', serif;
+    color: white;
 }
 
 .odin {
-    background-color: black;
+    background-color: rgb(0, 0, 0 / 0.9);
     position: relative;
     top: 20vh;
     gap: 1vw;
@@ -55,15 +64,29 @@
 
 /* right */
 
+
+.right {
+    width: 60vw;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+}
+
 .header{
     font-weight: 500;
     width: 90%;
     font-size: 1.2rem;
     padding-left: 3vw;
+    /* padding-top: 10vw; */
 }
 
 .want-text{
     margin: 40px 0 80px;
+}
+
+label{
+    font-weight: 600;
+    letter-spacing: 1.5px;
 }
 
 /* form */
@@ -75,37 +98,50 @@
     gap: 20px;
     padding-top: 20px;
     padding-bottom: 20px;
+    align-items: center;
 }
 
 .input {
     display: flex;
     flex-flow: column wrap;
-    width: 40%;
+    width: 37%;
     font-size: 0.7rem;
     text-transform: uppercase;
-    opacity: 50%;
+    opacity: 100%;
 }
+
+input{
+    border: 1px solid #E5E7EB;
+    border-radius: 3px;
+}
+
+input:focus{
+    outline: none;
+    border: 2px solid blue;
+}
+
 
 .title {
     width: 100%;
     font-size: 1.2rem;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 
 button {
   align-items: center;
-  background-color: #156135fb;
+  background-color: #596D48;
   border-radius: 8px;
   box-sizing: border-box;
   color: rgb(255, 255, 255);
   cursor: pointer;
   display: flex;
-  font-size: 100%;
+  font-weight: 700;
   line-height: 1.15;
   margin: 0;
   padding: 10px 21px;
   text-align: center;
+  border-color: #596D48;
 }
 
 .login {
@@ -113,10 +149,27 @@ button {
     gap: 5px;
 }
 
+.create-button,
+.login {
+    padding-top: 10px;
+    gap: 5px;
+}
+
 a {
     color: #156135fb;
     font-weight: 700;
+    text-decoration: none;
 }
+
+/* .bottom {
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding-left: 20px;
+    gap: 20px;
+} */
 
 @media only screen and (max-width: 600px) {
     .content{
@@ -143,7 +196,7 @@ a {
         width: auto;
         margin-top: 30px;
     }
-    .inputs{
+    .body{
         padding: 10px 20px;
     }
     .want-text{
